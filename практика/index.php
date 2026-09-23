@@ -33,5 +33,6 @@
     echo "a = $a, b =$b, c = $c,  res = $res";
     ?>
     
+    clic.ru/3HXRAn
 </body>
 </html>

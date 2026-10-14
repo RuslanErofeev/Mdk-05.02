@@ -8,12 +8,7 @@
 <?php
 if (isset($_GET[' number'])){
 
-
-
-
-
-
-$a = 20;
+$a = 5;
 switch ($a)  {
     case 1:
         echo 'a = 1';

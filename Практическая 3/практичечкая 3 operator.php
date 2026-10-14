@@ -1,4 +1,11 @@
 //  ЗАДАЧА 1
+<h1> Оператор выбора - Switch</h1>
+<form action=""> 
+<p>Введите число:</p>
+<input name= "number">
+<input type ="submit"  value = "Отправить">
+</form>
+
 <?php
 if (isset($_GET[' number'])){
 

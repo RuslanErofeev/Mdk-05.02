@@ -1,53 +1,57 @@
-<h1>Практическая работа</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Практическая работа</title>
+</head>
+<body>
+
 <?php
-$a = 5;
-$b = 4;
+
+echo "<h2>Формула 1</h2>";
+
+$a = 10;
+$b = 5;
 $c = 2;
 $d = 4;
 
-$result = (($a / $c) * ($b / $d)) - (($a * $b - $c) / ($c * $d));
+echo "a = $a <br>";
+echo "b = $b <br>";
+echo "c = $c <br>";
+echo "d = $d <br>";
 
- "a = $a";
- "b = $b";
- "c = $c";
- "d = $d";
- "Результат = " . $result;
-?>
+$result1 = ($a / $c) * ($b / $d) - (($a * $b - $c) / ($c * $d));
 
-<h2>Практическая работа 2</h2>
-<?php
+echo "Результат = " . $result1 . "<br><br>";
+
+
+echo "<h2>Формула 2</h2>";
+
 $x = 4;
+$y = 6;
+
+echo "x = $x <br>";
+echo "y = $y <br>";
+
+$result2 = (($x + $y) / ($y + 1)) - (($x * $y - 12) / (34 + $x));
+
+echo "Результат = " . $result2 . "<br><br>";
+
+
+echo "<h2>Формула 3</h2>";
+
+$x = 5;
 $y = 2;
 
-$formula2 = (($x + $y) / ($y + 1)) - (($x * $y - 12) / (34 + $x));
+echo "x = $x <br>";
+echo "y = $y <br>";
 
- "x = $x";
- "y = $y";
- "Результат = " . $formula2;
+$result3 = pow((($x + 1) / ($x - 1)), $x) + (18 * $x * pow($y, 2)) - (pow((1 + (1 / pow($x, 2))), $x) - (12 * pow($x, 2) * $y));
+
+echo "Результат = " . $result3 . "<br>";
+
 ?>
 
-<h3>Практическая 3</h3>
-<?php
-$x = 4;
-$y = 5;
-
-$formula1 = (($x + 1) / ($x - 1) + $x) + (18 * $x * ($y = 2));
-
- "x = $x";
- "y = $y";
- "Результат = " . $formula1;
-?>
-
-<h4>Практическая 4</h4>
-<?php
-$x = 6;
-$y = 9;
-
-$formula3 = (1 + (1 / ($x + 2))* $x) - (12 * ($x + 2) * $y);
-
- "x = $x";
- "y = $y";
- "Результат = " . $formula3;
-?>
-
+</body>
+</html>
 

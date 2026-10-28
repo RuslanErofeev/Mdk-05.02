@@ -1,4 +1,4 @@
-h1>Тернарный оператор</h1>
+<h1>Тернарный оператор</h1>
 <h2>Задача 1</h2>
 <form actions="">
     <p>Введите число a:</p>
@@ -6,7 +6,6 @@ h1>Тернарный оператор</h1>
     <input type="submit" value="Отправить">
     <p>Введите число b:</p>
     <input name="b">
-    <input type="submit" value="Отправить">
 </form>
 <?php
 if(isset($_GET['a']) && isset($_GET['b'])){

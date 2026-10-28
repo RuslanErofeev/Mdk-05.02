@@ -6,11 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-
-    <h1>Практическая работа 5</h1>
-    <h1>Задача 1</h1>
+    <h1>Практическая работа 4</h1>
+    <h2>Задача 1</h2>
     <?php 
-    $number = [55,88,84,76];
+    $number = [21, 4, 54, 77667, 969];
     $max = $number[0];
     $min = $number[0];
     foreach ($number as $key => $value) {
@@ -32,17 +31,17 @@
     }
     echo $sum;
     ?>
-     <h3>Задача 3</h3>
+    <h2>Задача 3</h2>
     <?php 
-    $number = [12, 43, 55, 45, 54, 9];
+    $t = [12, 43, 54545, 67, 54, 4];
     $sum = 0;
-    foreach ($number as $key => $value) {
+    foreach ($t as $key => $value) {
         $sum += $value;
     }
     $sum /= ($key + 1);
     echo $sum;
     ?>
-    <h2>Задача 4</h2>
+       <h2>Задача 4</h2>
     <?php 
     $numbers = [2121, -56, 445, 8, -67, -6];
     $res = [];
@@ -60,7 +59,7 @@
     ?>
     <h2>Задача 5</h2>
     <?php 
-    $nums = [454, 54, 67, 4344, 434, 43, 67788, 1845, 67];
+    $nums = [454, 84, 4344, 434, 43];
     foreach ($nums as $key => $value) {
         if ($key % 2 === 0) {
             echo $value . " ";

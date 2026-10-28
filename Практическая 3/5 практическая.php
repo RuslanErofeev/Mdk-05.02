@@ -41,101 +41,119 @@
     $sum /= ($key + 1);
     echo $sum;
     ?>
-    <h2>Задача 4</h2>
-    <?php 
-    $numbers = [2121, -56, 445, 8, -67, -6];
-    $res = [];
-    foreach ($numbers as $key => $value) {
-        if ($value > 0) {
-            $res[] = $value ** 2;   
+<h2>Задача 4</h2>
+<?php
+$numbers = [-2,2,4,-4];
+echo "Исходный массив массив: ";
+foreach ($numbers as $value){
+    echo $value, ' ';
+}
+echo '<br>';
+$new = [];
+foreach ($numbers as $value){
+    if ($value > 0){
+        $new[] = $value**2;
+    } else {
+        $new[] = $value*(-1);
+    }
+}
+echo "Получившийся массив: ";
+foreach ($new as $value){
+    echo $value, ' ';
+}
+?>
+<h2>Задача 5</h2>
+<?php
+$numbers = [0,1,2,3,4,5];
+echo "Исходный массив массив: ";
+foreach ($numbers as $value){
+    echo $value, ' ';
+}
+echo '<br>';
+$new = [];
+foreach ($numbers as $key => $value){
+    if ($key%2==0){
+        $new[] = $value;
+}
+}
+echo "Получившийся массив: ";
+foreach ($new as $value){
+    echo $value, ' ';
+}
+?>
+<h2>Задача 6</h2>
+<?php
+$numbers = [0,2,1,4,3];
+$new = [];
+echo "Исходный массив: ";
+foreach ($numbers as $value){
+    echo $value . " ";
+}
+echo '<br>';
+for ($key = 1; $key < count($numbers); $key++){
+    if($numbers[$key]>$numbers[$key-1]){
+        $new[] = $numbers[$key];
+    }
+}
+echo "Получившийся массив: ";
+foreach ($new as $value){
+    echo $value;
+}
+?>
+<h2>Задача 7</h2>
+<?php
+$numbers = [0,2,1,4,3];
+echo "Исходный массив: ";
+foreach ($numbers as $value){
+    echo $value . " ";
+}
+echo '<br>';
+for ($key = 0; $key < count($numbers); $key+=2){
+    if($key + 1<count($numbers)){
+        $new = $numbers[$key];
+        $numbers[$key] = $numbers[$key+1];
+        $numbers[$key+1] = $new;
+    }
+}
+echo "Получившийся массив: ";
+foreach ($numbers as $value){
+    echo $value;
+}
+?>
+<h2>Задача 8</h2>
+<?php
+$numbers = [0,2,1,4,3];
+echo "Исходный массив: ";
+foreach ($numbers as $value){
+    echo $value . " ";
+}
+echo '<br>';
+$last = $numbers[count($numbers)-1];
+for ($key=count($numbers)-1; $key>0; $key--){
+    $numbers[$key]=$numbers[$key-1];
+}
+$numbers[0] = $last;
+echo "Получившийся массив: ";
+foreach ($numbers as $value){
+    echo $value;
+}
+?>
+<h2>Задача 9</h2>
+<?php
+$numbers = [-2,2,3,3,3];
+$count = 0;
+echo "Исходный массив: ";
+foreach ($numbers as $value){
+    echo $value  . " ";
+}
+echo '<br>';
+for ($key=0; $key<count($numbers); $key++){
+    for ($d = $key+1; $d<count($numbers); $d++){
+        if ($numbers[$key]==$numbers[$d]){
+            $count+=1;
         }
-        else {
-            $res[] = abs($value);
-        }
     }
-    foreach ($res as $value) {
-        echo $value . " ";
-    }
-    ?>
-    <h2>Задача 5</h2>
-    <?php 
-    $nums = [454, 54, 67, 4344, 434, 43, 67788, 1845, 67];
-    foreach ($nums as $key => $value) {
-        if ($key % 2 === 0) {
-            echo $value . " ";
-        }
-    }
-    ?>
-    <h2>Задача 6</h2>
-    <?php 
-    $numbs = [5674, 57, 6, 7, 45, 52, 678];
-    $first = true;
-    $previous = 0;
-    foreach ($numbs as $current) {
-        if (!$first && $current > $previous) {
-            echo $current . " ";
-        }
-        $previous = $current;
-        $first = false;
-    }
-    ?>
-    <h2>Задача 7</h2>
-    <?php 
-    $A = [212, 45, 6, 566, 75, 56, 4, 34566];
-    $swapped = [];
-    $length = count($A);
-    foreach ($A as $key => $item) {
-        if ($key % 2 === 0) {
-            if ($key + 1 < $length) {
-                $swapped[$key + 1] = $item;
-            } else {
-                $swapped[$key] = $item;
-            }
-        } else {
-            $swapped[$key - 1] = $item;
-        }
-    }
-    ksort($swapped);
-    foreach ($swapped as $item) {
-        echo $item . " ";
-    }
-    ?>
-    <h2>Задача 8</h2>
-    <?php 
-    $list =[544, 54, 67, 44, 5, 690, 65656, 7, 6];
-    $shifted = [];
-    $length = count($list);
-
-    foreach ($list as $key => $item) {
-        $nextKey = ($key + 1) % $length;
-        $shifted[$nextKey] = $item;
-    }
-
-    ksort($shifted);
-
-    foreach ($shifted as $item) {
-        echo $item . " ";
-    }
-    ?>
-    <h2>Задача 9</h2>
-    <?php 
-    $ns = [545, 55, 67, 6, 87, 67, 4321];
-    $counts = [];
-    foreach ($ns as $num) {
-        if (isset($counts[$num])) {
-            $counts[$num]++;
-        } else {
-            $counts[$num] = 1;
-        }
-    }
-
-    $totalPairs = 0;
-
-    foreach ($counts as $count) {
-        $totalPairs += ($count * ($count - 1)) / 2;
-    }
-
-    echo $totalPairs;
-    ?>
-</body>
-</html>
+}
+echo "Пар элементов, равных друг другу - $count";
+?>
+  

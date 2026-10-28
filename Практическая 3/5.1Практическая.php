@@ -8,5 +8,18 @@ foreach  ($numbers  as $key => $value) {
 ?>
 <h2>Задача 2</h2>
 <?php 
+$numbers = ['monday' => 'Понедельник' , 'tuesday'=>  'Вторник', 'Wansday' => 'среда',  'Thusday' => 'четверг', 'Friday' => 'пятница', 'Satuday' => 'Суббота', 'Sunday' => 'Воскресенье'];
+$number = 'monday';
+$found = 'False';
+foreach ($numbers as $key => $value) {
+
+    if($numbers == $key) {
+    echo "$key - $value";
+    $found  = 'True';
+    }
+}
+if ($found == false){
+    echo 'В славаре слова нет такого слова';
+}
 
 ?>

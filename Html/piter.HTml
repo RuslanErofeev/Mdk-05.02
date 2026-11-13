@@ -34,3 +34,76 @@
         <h2>Массивы</h2>
         </body>
     <html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+    function getDivisors($number) {
+    $divisors =[];
+    
+    for ($i = 1; $i <= $number; $i++) {
+        if ($number % $i === 0) {
+            $divisors = $i; // Если делится без остатка, добавляем в массив
+        }
+    }
+    
+    return $divisors;
+}
+
+
+
+function getDivisorsOptimized($number) {
+    $divisors =[];
+    $sqrt = (int)sqrt($number);
+    
+    for ($i = 1; $i <= $sqrt; $i++) {
+        if ($number % $i === 0) {
+            $divisors = $i; // Первый делитель пары
+            if ($i != $number / $i) { // Если числа не совпадают (например, 4 для числа 16)
+                $divisors = $number / $i; // Второй делитель пары
+            }
+        }
+    }
+    
+
+    sort($divisors);
+    
+    return $divisors;
+}
+
+
+
+// Примеры
+var_dump(getDivisors(12));           // [1, 2, 3, 4, 6, 12]
+var_dump(getDivisorsOptimized(12));   // [1, 2, 3, 4, 6, 12] (порядок может отличаться в зависимости от реализации сортировки)
+
+var_dump(getDivisors(17));          // [1, 17] (простое число)
+?>

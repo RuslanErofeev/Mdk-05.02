@@ -46,3 +46,35 @@ for ($i = 0; $i < $length; $i++) { // запускание цикла если �
 }
 
 echo "Words count: " . $wordsCount;
+?>
+
+<h2>Задание 3</h2>
+<?php
+
+$text = "Получили стипендию и купили что-то полезное!";
+
+// 1. Извлекаем все слова из строк
+preg_match_all('/[а-яёa-z]+/iu', $text, $matches);
+$words = $matches[0];
+
+echo "Исходная строка: $text\n\n";
+echo "Найденные слова:\n";
+
+// Перебираем каждое слово
+foreach ($words as $word) {
+    //  'А' и 'а' считались одинаковыми
+    $lowerWord = mb_strtolower($word, 'UTF-8');
+    
+    // Получаем длину слова
+    $length = mb_strlen($lowerWord, 'UTF-8');
+    
+    // Берем первую и последнюю буквы
+    $firstChar = mb_substr($lowerWord, 0, 1, 'UTF-8');
+    $lastChar = mb_substr($lowerWord, -1, 1, 'UTF-8');
+    
+    // Сравниваем (если слово из 1 буквы подойдет; если нет — добавьте $length > 1)
+    if ($firstChar === $lastChar) {
+        echo $word . "\n";
+    }
+}
+?>

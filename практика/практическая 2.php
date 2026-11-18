@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
-=======
-!DOCTYPE html>
->>>>>>> 3825d09d4bb5ece6516a19e50ec8be92b6030e49
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -49,8 +45,6 @@ $y = 2;
 
 echo "x = $x <br>";
 echo "y = $y <br>";
-<<<<<<< HEAD
-
 $result3 = pow((($x + 1) / ($x - 1)), $x) + (18 * $x * pow($y, 2)) - (pow((1 + (1 / pow($x, 2))), $x) - (12 * pow($x, 2) * $y));
 
 echo "Результат = " . $result3 . "<br>";
@@ -70,4 +64,5 @@ echo "Результат = " . $result3 . "<br>";
 
 </body>
 </html>
->>>>>>> 3825d09d4bb5ece6516a19e50ec8be92b6030e49
+
+9
